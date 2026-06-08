@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta de Seguridad Informática</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #eaf4ff;
+    margin: 0;
+    padding: 20px;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+h1{
+    text-align: center;
+    color: #003366;
+}
+
+p{
+    font-weight: bold;
+}
+
+select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+
+#resultado{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔒 Encuesta de Seguridad Informática</h1>
+
+<p>1. ¿Usa contraseñas seguras y diferentes en cada cuenta o correo electrónico?</p>
+<select id="p1">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>2. ¿Tiene activada la verificación en dos pasos (2FA)?</p>
+<select id="p2">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>3. ¿Revisa los permisos de las aplicaciones antes de instalarlas?</p>
+<select id="p3">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>4. ¿Configura adecuadamente la privacidad en sus redes sociales?</p>
+<select id="p4">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>5. ¿Realiza respaldos periódicos de información importante?</p>
+<select id="p5">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>6. ¿Actualiza sus contraseñas regularmente?</p>
+<select id="p6">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>7. ¿Evita conectarse a redes WiFi públicas para operaciones bancarias?</p>
+<select id="p7">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>8. ¿Mantiene actualizado su sistema operativo y aplicaciones?</p>
+<select id="p8">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<p>9. ¿Comparte información personal sensible en sitios no confiables?</p>
+<select id="p9">
+<option>No</option>
+<option>Si</option>
+</select>
+
+<p>10. ¿Usa antivirus o herramientas de seguridad en sus dispositivos?</p>
+<select id="p10">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<br>
+
+<button onclick="calcular()">Ver resultado</button>
+
+<p id="resultado"></p>
+
+</div>
+
+<script>
+function calcular(){
+
+let total = 0;
+
+for(let i=1; i<=10; i++){
+
+    let valor = document.getElementById("p"+i).value;
+
+    if(i == 9){
+        if(valor == "No"){
+            total++;
+        }
+    }else{
+        if(valor == "Si"){
+            total++;
+        }
+    }
+}
+
+let mensaje = "";
+
+if(total >= 9){
+    mensaje = "🟢 Excelente. ¡Felicidades! Mantienes buenas prácticas de seguridad digital.";
+}
+else if(total >= 7){
+    mensaje = "🟡 Regular. Se recomienda reforzar algunas prácticas de seguridad.";
+}
+else{
+    mensaje = "🔴 Malo. Debes mejorar tus hábitos de seguridad digital.";
+}
+
+document.getElementById("resultado").innerHTML = mensaje;
+}
+</script>
+
+</body>
+</html>
