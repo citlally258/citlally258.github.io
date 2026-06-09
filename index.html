@@ -65,6 +65,10 @@ button:hover{
 <div class="container">
 
 <h1>🔒 Encuesta de Seguridad Informática</h1>
+    <p>
+Visitantes:
+<img src="https://visitor-badge.laobi.icu/badge?page_id=citlally258.encuesta" alt="contador">
+</p>
     <h2>👩‍💻 Presentación</h2>
 
 <p>
@@ -161,7 +165,8 @@ Responde esta encuesta y descubre qué tan seguras son tus prácticas digitales.
 <button onclick="calcular()">Ver resultado</button>
 
 <p id="resultado"></p>
-
+<hr>
+<p id="agradecimiento"></p>
 </div>
 
 <script>
@@ -172,6 +177,11 @@ let total = 0;
 for(let i=1; i<=10; i++){
 
     let valor = document.getElementById("p"+i).value;
+
+    if(valor == ""){
+        alert("Por favor responde todas las preguntas.");
+        return;
+    }
 
     if(i == 9){
         if(valor == "No"){
@@ -196,7 +206,12 @@ else{
     mensaje = "🔴 Malo. Debes mejorar tus hábitos de seguridad digital.";
 }
 
-alert(
-mensaje +
-"\n\n🙏 Gracias por responder esta encuesta de seguridad informática.\nTu participación ayuda a promover el uso seguro de la tecnología y la protección de los datos personales."
-);
+document.getElementById("resultado").innerHTML = mensaje;
+
+document.getElementById("agradecimiento").innerHTML =
+"🙏 Gracias por responder esta encuesta de seguridad informática. Tu participación ayuda a promover el uso seguro de la tecnología y la protección de los datos personales.";
+}
+</script>
+
+</body>
+</html>
