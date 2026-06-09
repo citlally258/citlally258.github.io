@@ -68,21 +68,12 @@ button:hover{
     <h2>👩‍💻 Presentación</h2>
 
 <p>
-Hola, mi nombre es Citlally Monserrat Rodríguez Peña de la Carrera de Ciberseguridad. Este proyecto fue desarrollado con el propósito de promover la conciencia sobre la seguridad informática y la protección de datos personales en internet.
+Hola, mi nombre es Citlally Monserrat Rodríguez Peña. Este proyecto tiene como objetivo concientizar sobre la importancia de la seguridad informática y la protección de los datos personales en internet.
 </p>
-
-<p>
-A través de esta encuesta, los usuarios podrán evaluar algunas de sus prácticas digitales y reflexionar sobre la importancia de mantener hábitos seguros al utilizar dispositivos, redes sociales y servicios en línea.
-</p>
-
 <h2>⚠️ Introducción</h2>
 
 <p>
-Actualmente gran parte de nuestra información personal se encuentra almacenada en internet. Muchas personas son víctimas de fraudes, robo de cuentas o robo de información por no aplicar medidas básicas de seguridad.
-</p>
-
-<p>
-Es más fácil caer en una trampa digital de lo que parece. Un enlace falso, una contraseña débil o compartir información en sitios no confiables puede poner en riesgo nuestros datos personales.
+Hoy en día compartimos gran parte de nuestra información en internet. Sin embargo, una contraseña débil, un enlace falso o un sitio no confiable pueden poner en riesgo nuestros datos.
 </p>
 
 <p>
@@ -205,9 +196,11 @@ else{
     mensaje = "🔴 Malo. Debes mejorar tus hábitos de seguridad digital.";
 }
 
-document.getElementById("resultado").innerHTML = mensaje;
-}
-</script>
-
-</body>
-</html>
+window.open("", "Resultado", "width=500,height=300")
+.document.write(`
+<h2>Resultado de la Encuesta</h2>
+<p>${mensaje}</p>
+<hr>
+<p>🙏 Gracias por responder esta encuesta de seguridad informática.</p>
+<p>Tu participación ayuda a promover el uso seguro de la tecnología y la protección de los datos personales.</p>
+`);
